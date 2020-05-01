@@ -10,6 +10,7 @@ const util = require('util');
 
 const htmlsafe = helper.htmlsafe;
 const linkto = helper.linkto;
+const externalsourcelink = helper.externalsourcelink;
 const resolveAuthorLinks = helper.resolveAuthorLinks;
 const hasOwnProp = Object.prototype.hasOwnProperty;
 
@@ -409,6 +410,7 @@ exports.publish = (taffyData, opts, tutorials) => {
     let modules;
     let namespaces;
     let outputSourceFiles;
+    let externalSourceLinks;
     let packageInfo;
     let packages;
     const sourceFilePaths = [];
@@ -590,13 +592,18 @@ exports.publish = (taffyData, opts, tutorials) => {
     // output pretty-printed source files by default
     outputSourceFiles = conf.default && conf.default.outputSourceFiles !== false;
 
+    // link to externally hosted source files
+    externalSourceLinks = conf.default && conf.default.externalSourceLinks;
+
     // add template helpers
     view.find = find;
     view.linkto = linkto;
+    view.externalsourcelink = externalsourcelink;
     view.resolveAuthorLinks = resolveAuthorLinks;
     view.tutoriallink = tutoriallink;
     view.htmlsafe = htmlsafe;
     view.outputSourceFiles = outputSourceFiles;
+    view.externalSourceLinks = externalSourceLinks;
 
     // once for all
     view.nav = buildNav(members);
