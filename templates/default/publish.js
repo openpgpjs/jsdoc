@@ -356,7 +356,7 @@ function linktoExternal(longName, name) {
  */
 function buildNav(members) {
     let globalNav;
-    let nav = '<h2><a href="index.html">Home</a></h2>';
+    let nav = '';
     const seen = {};
     const seenTutorials = {};
 
@@ -381,12 +381,14 @@ function buildNav(members) {
 
         if (!globalNav) {
             // turn the heading into a link so you can actually get to the global page
-            nav += `<h3>${linkto('global', 'Global')}</h3>`;
+            nav = `<h3>${linkto('global', 'Global')}</h3>` + nav;
         }
         else {
-            nav += `<h3>Global</h3><ul>${globalNav}</ul>`;
+            nav = `<h3>Functions</h3><ul>${globalNav}</ul>` + nav;
         }
     }
+
+    nav = '<h2><a href="index.html">Home</a></h2>' + nav;
 
     return nav;
 }
