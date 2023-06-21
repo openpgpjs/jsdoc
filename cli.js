@@ -87,6 +87,7 @@ module.exports = (() => {
         try {
             switch ( path.extname(confPath) ) {
                 case '.js':
+                case '.cjs':
                     config = require( path.resolve(confPath) ) || {};
                     break;
                 case '.json':
