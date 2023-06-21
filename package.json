@@ -1,5 +1,5 @@
 {
-  "name": "jsdoc",
+  "name": "@openpgp/jsdoc",
   "version": "3.6.11",
   "revision": "1658338843387",
   "description": "An API documentation generator for JavaScript.",
@@ -10,7 +10,7 @@
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/jsdoc/jsdoc"
+    "url": "https://github.com/openpgpjs/jsdoc"
   },
   "dependencies": {
     "@babel/parser": "^7.9.4",
@@ -60,7 +60,7 @@
       "taffydb"
     ]
   },
-  "bugs": "https://github.com/jsdoc/jsdoc/issues",
+  "bugs": "https://github.com/openpgpjs/jsdoc/issues",
   "author": {
     "name": "Michael Mathews",
     "email": "micmath@gmail.com"
